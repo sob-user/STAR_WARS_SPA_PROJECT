@@ -1,6 +1,7 @@
 import Select from "./select";
 import { useSelector } from "react-redux";
 import menuConfig from "../../utils/menuConfig";
+import InputSearch from "./imputSearch";
 
 function Query() {
     const store = useSelector((state) => state);
@@ -23,6 +24,7 @@ function Query() {
                 options={filter.options}
                 />
             ))}
+            <InputSearch />
         </div>
     )
 }
