@@ -1,6 +1,10 @@
+import Query from "../../components/query";
+
 function Home() {
     return (
-        <>HOME</>
+        <>
+        <Query />
+        </>
     )
 }
 

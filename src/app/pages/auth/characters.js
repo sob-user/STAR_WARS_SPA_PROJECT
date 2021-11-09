@@ -1,6 +1,10 @@
+import Query from "../../components/query";
+
 function Characters() {
     return (
-        <>CHARACTERS</>
+        <>
+        <Query />
+        </>
     )
 }
 

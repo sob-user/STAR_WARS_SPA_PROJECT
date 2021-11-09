@@ -1,6 +1,10 @@
+import Query from "../../components/query";
+
 function Planets() {
     return (
-        <>PLANETS</>
+        <>
+        <Query />
+        </>
     )
 }
 
