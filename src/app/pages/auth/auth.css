@@ -1,0 +1,13 @@
+/* -- HERE WE HAVE THE CSS WE CAN NOT BE IMPLEMENT WITH SIMPLICITY IN JSX -- */
+
+/* PAGE [AUTH INDEX] */
+.AuthIndex {
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-name: page-appear;
+}
+
+@keyframes page-appear {
+    from { background: black; }
+    to { background: #F5F5F5; }
+}

@@ -1,0 +1,44 @@
+/* -- HERE WE HAVE THE CSS WE CAN NOT BE IMPLEMENT WITH SIMPLICITY IN JSX -- */
+
+/* COMPONENT [LOADER] */
+.LoaderBlock {
+    animation: block-animated 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.LoaderBlock:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.36s;
+    background: #f9b500;
+}
+
+.LoaderBlock:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.24s;
+    background: #f9b500;
+}
+
+.LoaderBlock:nth-child(3) {
+    left: 56px;
+    animation-delay: -0.12s;
+    background: #f9b500;
+}
+
+.LoaderBlock:nth-child(4) {
+    left: 56px;
+    animation-delay: 0;
+    background: #f9b500;
+}
+
+@keyframes block-animated {
+    0% { top: 8px; height: 32px; }
+    100% { top: 24px; height: 17px;}
+}
+
+/* COMPONENT [NAVIGATION BUTTON] */
+.NavigationButton:hover {
+    background: rgba(95, 83, 83, 0.568);
+    border-top-left-radius: 37px 140px;
+    border-top-right-radius: 23px 130px;
+    border-bottom-left-radius: 110px 19px;
+    border-bottom-right-radius: 120px 24px;
+}
