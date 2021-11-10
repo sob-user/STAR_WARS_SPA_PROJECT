@@ -13,7 +13,8 @@ function Select(props) {
         textTransform: "uppercase",
         fontWeight: "bold",
         fontSize: "0.9em",
-        textAlign: "center"
+        textAlign: "center",
+        cursor: "pointer"
     };
 
     return (

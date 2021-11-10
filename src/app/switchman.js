@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Loading from "./pages/public/loading";
 import AuthIndex from "./pages/auth/authIndex";
+import PublicIndex from "./pages/public/publicIndex";
 
 function SwitchMan() {
     const [loading, setLoading] = useState(true);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-    const userIsLogged = isAuthenticated ? <AuthIndex /> : <p>not auth</p>;
+    const userIsLogged = isAuthenticated ? <AuthIndex /> : <PublicIndex />;
 
     const STYLE = {
         height: "100vh",

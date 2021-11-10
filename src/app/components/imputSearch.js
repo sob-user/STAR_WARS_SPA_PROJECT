@@ -9,7 +9,8 @@ function InputSearch() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-around",
-        margin: "20px"
+        margin: "20px",
+        background: "white"
     }
 
     const INPUT_STYLE = {
