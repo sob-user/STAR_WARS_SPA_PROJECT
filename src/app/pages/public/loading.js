@@ -8,7 +8,7 @@ function Loading(props) {
 
     setTimeout(() => {
         // CALL API BETWEEN HERE
-        setIsAuthenticated(true);
+        setIsAuthenticated(false);
         setLoading(false);
         // AND HERE
     }, 3000);

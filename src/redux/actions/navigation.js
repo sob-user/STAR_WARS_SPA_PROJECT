@@ -1,8 +1,15 @@
-import { TOGGLE_PAGE } from "./types";
+import { TOGGLE_PAGE, TOGGLE_PUBLIC_PAGE } from "./types";
 
-export const togglePage = (currentPage) => {
+export const togglePage = (page) => {
     return {
         type: TOGGLE_PAGE,
-        payload: currentPage
+        payload: page
+    };
+};
+
+export const togglePublicPage = (page) => {
+    return {
+        type: TOGGLE_PUBLIC_PAGE,
+        payload: page
     };
 };

@@ -33,6 +33,7 @@ function Navigation() {
                 key={index}
                 current={current === thisName ? true : false}
                 returnCurrentClicked={handleButtonNameClicked}
+                color={"white"}
                 />
             ))}
         </div>

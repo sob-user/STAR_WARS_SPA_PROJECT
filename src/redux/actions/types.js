@@ -1,1 +1,2 @@
 export const TOGGLE_PAGE = "TOGGLE_PAGE";
+export const TOGGLE_PUBLIC_PAGE = "TOGGLE_PUBLIC_PAGE";

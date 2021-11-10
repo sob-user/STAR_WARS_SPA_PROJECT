@@ -1,5 +1,5 @@
 function NavigationButton(props) {
-    const { name, returnCurrentClicked, current } = props;
+    const { name, returnCurrentClicked, current, color } = props;
 
     let STYLE = {
         height: "fit-content",
@@ -9,7 +9,7 @@ function NavigationButton(props) {
         alignItems: "center",
         justifyContent: "center",
         margin: "10px",
-        color: "white",
+        color,
         cursor: "pointer"
     };
 
