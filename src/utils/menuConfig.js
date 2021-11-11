@@ -67,7 +67,7 @@ const menuConfig = {
             }
         ]
     }, 
-    CHARACTERS: {
+    PEOPLE: {
         component: <Characters />,
         svg: svg_characters,
         filters: [

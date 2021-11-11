@@ -5,13 +5,14 @@ import {
 
 
 const initialState = {
-    currentPage: "HOME",
+    currentPage: JSON.parse(sessionStorage.getItem("currentPage")) || "PEOPLE",
     currentPublicPage: "login"
 };
 
 export default function navigationReducer(state = initialState, action) {
     switch(action.type) {
         case TOGGLE_PAGE:
+            sessionStorage.setItem("currentPage", JSON.stringify(action.payload));
             return {
                 ...state,
                 currentPage: action.payload,

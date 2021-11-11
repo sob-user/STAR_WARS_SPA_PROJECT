@@ -1,2 +1,6 @@
 export const TOGGLE_PAGE = "TOGGLE_PAGE";
 export const TOGGLE_PUBLIC_PAGE = "TOGGLE_PUBLIC_PAGE";
+export const LOADING_DATA = "LOADING DATA";
+export const DATA_LOADED = "DATA_LOADED";
+export const DATA_CLEARED = "DATA_CLEARED";
+export const DATA_REFRESH = "DATA_REFRESH";

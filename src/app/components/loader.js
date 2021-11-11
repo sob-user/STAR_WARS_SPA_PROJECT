@@ -4,7 +4,7 @@ function Loader() {
         width: "160px",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     };
 
     const LOADER_BLOCK_STYLE = {
