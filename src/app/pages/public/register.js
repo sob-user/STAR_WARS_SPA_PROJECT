@@ -30,7 +30,12 @@ function Register() {
         />
         <AjustableNavbar />
         <Input 
-        placeholder={"username"} 
+        placeholder={"firstname"} 
+        type={"text"} 
+        handleBody={handleBody}
+        />
+        <Input 
+        placeholder={"lastname"} 
         type={"text"} 
         handleBody={handleBody}
         />
