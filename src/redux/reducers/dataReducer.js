@@ -7,6 +7,7 @@ import {
 
 const initialState = {
     loading: false,
+    ready: false,
     payload: null
 };
 
@@ -26,13 +27,15 @@ export default function dataReducer(state = initialState, action) {
             return {
                 ...state,
                 loading: false,
-                payload: JSON.parse(sessionStorage.getItem("data"))
+                payload: JSON.parse(sessionStorage.getItem("data")),
+                ready: true,
             };
         case DATA_CLEARED:
             return {
                 ...state,
                 loading: false,
-                payload: null
+                payload: null,
+                ready: false,
             };
         default:
             return state;

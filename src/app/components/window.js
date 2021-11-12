@@ -2,15 +2,20 @@ import menuConfig from "../../utils/menuConfig";
 import DisplayData from "./displayData";
 import Pagination from "./pagination";
 import { useSelector } from "react-redux";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 function Window() {
     const store = useSelector((state) => state);
     const currentPage = store.navigation.currentPage;
-    const loadingData = store.data.loading;
-    const pages = store.data.payload[currentPage.toLowerCase()];
+    const loadingData = store.data.ready;
+    // const pages = store?.data?.payload[currentPage.toLowerCase()];
+    const resetPageIndex = store.page.reset;
 
     const [ pageNumber, setPageNumber ] = useState(0);
+
+    useEffect(() => {
+        if(resetPageIndex) setPageNumber(0);
+    }, [resetPageIndex])
 
     const STYLE = {
         width: "100%",
@@ -20,14 +25,16 @@ function Window() {
     return (
         <div style={STYLE}>
             {menuConfig[currentPage].component}
+            {loadingData ?
             <DisplayData 
             loading={loadingData}
-            pageNumber={pageNumber}
-            />
+            pageNumber={resetPageIndex ? 0 : pageNumber}
+            /> : null }
+            {loadingData ?
             <Pagination 
-            pages={pages}
+            pages={{store, currentPage}}
             setPageNumber={setPageNumber}
-            />
+            /> : null}
         </div>
     );
 }

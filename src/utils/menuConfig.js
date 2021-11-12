@@ -31,42 +31,42 @@ const menuConfig = {
             }
         ]
     },
-    PROFILE: {
-        component: <Profile />,
-        svg: svg_profile,
-        filters: [
-            {
-                query: "filter by name",
-                options: [ "asc order", "desc order" ]
-            },
-            {
-                query: "filter by age",
-                options: [ "asc order", "desc order" ]
-            },
-            {
-                query: "filter by inscription date",
-                options: [ "asc order", "desc order" ]
-            }
-        ]
-    },
-    SEARCH: {
-        component: <Search />,
-        svg: svg_search,
-        filters: [
-            {
-                query: "filter by email",
-                options: [ "asc order", "desc order" ]
-            },
-            {
-                query: "filter by name",
-                options: [ "asc order", "desc order" ]
-            },
-            {
-                query: "filter by username",
-                options: [ "asc order", "desc order" ]
-            }
-        ]
-    }, 
+    // PROFILE: {
+    //     component: <Profile />,
+    //     svg: svg_profile,
+    //     filters: [
+    //         {
+    //             query: "filter by name",
+    //             options: [ "asc order", "desc order" ]
+    //         },
+    //         {
+    //             query: "filter by age",
+    //             options: [ "asc order", "desc order" ]
+    //         },
+    //         {
+    //             query: "filter by inscription date",
+    //             options: [ "asc order", "desc order" ]
+    //         }
+    //     ]
+    // },
+    // SEARCH: {
+    //     component: <Search />,
+    //     svg: svg_search,
+    //     filters: [
+    //         {
+    //             query: "filter by email",
+    //             options: [ "asc order", "desc order" ]
+    //         },
+    //         {
+    //             query: "filter by name",
+    //             options: [ "asc order", "desc order" ]
+    //         },
+    //         {
+    //             query: "filter by username",
+    //             options: [ "asc order", "desc order" ]
+    //         }
+    //     ]
+    // }, 
     PEOPLE: {
         component: <Characters />,
         svg: svg_characters,

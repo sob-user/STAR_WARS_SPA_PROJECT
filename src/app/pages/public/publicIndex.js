@@ -3,7 +3,8 @@ import Register from "./register";
 import ForgotPassword from "./forgotPassword";
 import { useSelector } from "react-redux";
 
-function PublicIndex() {
+function PublicIndex(props) {
+    const { setLoading } = props;
     const store = useSelector((state) => state);
     const currentPage = store.navigation.currentPublicPage;
 
@@ -18,7 +19,7 @@ function PublicIndex() {
     }
 
     const publicPages = {
-        login: <Login name={"login"}/>, 
+        login: <Login name={"login"} setLoading={setLoading} />, 
         register: <Register name={"register"}/>, 
         reset_password: <ForgotPassword name={"reset_password"}/>
     };

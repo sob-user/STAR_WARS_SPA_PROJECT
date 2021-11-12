@@ -1,3 +1,6 @@
+import { useSelector } from "react-redux";
+import { useState, useEffect } from "react"
+
 function Pagination(props) {
     const STYLE = {
         height: "80px",
@@ -22,16 +25,27 @@ function Pagination(props) {
     };
 
     const { pages, setPageNumber } = props;
+    const {store, currentPage} = pages;
+    const aa = store?.data?.payload[currentPage.toLowerCase()];
+
+    const Store = useSelector((state) => state);
+    const ready = Store.data.ready;
+
+    const [bindReady, setBindReady] = useState(false);
+
+    useEffect(() => {
+        if(ready) setTimeout(() => {setBindReady(true)}, 4000)
+    }, [ready])
 
     return (
         <div style={STYLE}>
-            {pages.map((page, index) => (
+            { bindReady ? aa.map((page, index) => (
                 <button 
                 key={index}
                 style={BUTTON_STYLE}
                 onClick={(e) => setPageNumber(parseInt(e.target.innerText) - 1)}
                 >{index + 1}</button>
-            ))}
+            )): null}
         </div>
     );
 }

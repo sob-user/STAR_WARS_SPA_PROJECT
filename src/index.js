@@ -11,6 +11,7 @@ import "./app/pages/auth/auth.css";
 const ROOT = document.getElementById("root");
 const renderIsReady = () => console.log("[RENDER] --> ready");
 
+
 ReactDOM.render(
     <Provider store={store}>
         <React.StrictMode>

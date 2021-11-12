@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux"
+
 function Card(props) {
 
-    const { data } = props;
+    const { pageNumber } = props;
 
     const STYLE = {
         height: "120px",
@@ -33,6 +35,10 @@ function Card(props) {
         cursor: "pointer",
         textTransform: "uppercase"
     };
+
+    const store = useSelector((state) => state);
+    const currentPage = store.navigation.currentPage.toLowerCase();
+    const data = store.data.payload[currentPage][pageNumber || 0];
 
     return (
         <>

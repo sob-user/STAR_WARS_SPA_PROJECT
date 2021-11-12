@@ -2,15 +2,29 @@ import starWarsLogo4 from "../../svg/star-wars-4.svg";
 import Image from "../../components/image";
 import Loader from "../../components/loader";
 import Message from "../../components/message";
+import { useDispatch } from "react-redux";
+import { loadUserFetch } from "../../../redux/actions/auth"
+import { loadUserInfo, userLoaded, resetUSerInfo } from "../../../redux/actions/user"
 
 function Loading(props) {
     const {setLoading, setIsAuthenticated} = props;
+    const dispatch = useDispatch();
 
-    setTimeout(() => {
-        // CALL API BETWEEN HERE
-        setIsAuthenticated(true);
-        setLoading(false);
-        // AND HERE
+
+    setTimeout(async() => {
+
+        dispatch(userLoaded());
+        const user = loadUserFetch();
+
+        if(user) {
+            dispatch(loadUserInfo( await user));
+            setIsAuthenticated(true);
+            setLoading(false);
+        } else {
+            dispatch(resetUSerInfo());
+            setIsAuthenticated(false);
+            setLoading(false);
+        }
     }, 3000);
 
     const loadingMessage = "Be patient, we look if the force be with you ...";

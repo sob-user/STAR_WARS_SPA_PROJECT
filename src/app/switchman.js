@@ -7,7 +7,7 @@ function SwitchMan() {
     const [loading, setLoading] = useState(true);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-    const userIsLogged = isAuthenticated ? <AuthIndex /> : <PublicIndex />;
+    const userIsLogged = isAuthenticated ? <AuthIndex setLoading={setLoading} setIsAuthenticated={setIsAuthenticated}/> : <PublicIndex setLoading={setLoading} />;
 
     const STYLE = {
         height: "100vh",

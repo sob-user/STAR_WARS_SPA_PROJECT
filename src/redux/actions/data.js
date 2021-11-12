@@ -61,8 +61,8 @@ async function getAllRessources(dispatch) {
                         if(page < numOfPages) {
                             payload[resources[ressource]] = data
                             setPersitentData(payload);
-                            dispatch(dispatchDataLoaded());
-                            dispatch(dispatchDataRefresh());
+                            await dispatch(dispatchDataLoaded());
+                            await dispatch(dispatchDataRefresh());
                         }
                     }
                 }

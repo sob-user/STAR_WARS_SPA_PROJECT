@@ -5,8 +5,11 @@ import User from "../svg/user.svg";
 import Logout from "../svg/logout.svg";
 import { useSelector } from "react-redux";
 import menuConfig from "../../utils/menuConfig";
+import { logoutUser } from "../../redux/actions/auth";
 
-function Header() {
+function Header(props) {
+
+    const {setLoading, setIsAuthenticated} = props;
 
     const store = useSelector((state) => state);
     const currentPage = store.navigation.currentPage;
@@ -16,6 +19,9 @@ function Header() {
 
     // HERE WE SIMULATE USER LOGOUT
     const logout = () => {
+        logoutUser();
+        setLoading(true);
+        setIsAuthenticated(false);
         console.log("logout")
     }
 

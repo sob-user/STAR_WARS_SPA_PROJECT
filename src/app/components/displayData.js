@@ -1,6 +1,7 @@
 import Loader from "./loader";
 import Card from "./card";
 import { useSelector } from "react-redux";
+import { useState, useEffect } from "react"
 
 function DisplayData(props) {
     const { loading, pageNumber } = props;
@@ -15,12 +16,16 @@ function DisplayData(props) {
     };
 
     const store = useSelector((state) => state);
-    const currentPage = store.navigation.currentPage.toLowerCase();
-    const payload = store.data.payload[currentPage][pageNumber];
+    const ready = store.data.ready;
+
+    const [bindReady, setBindReady] = useState(false);
+    useEffect(() => {
+        if(ready) setTimeout(() => {setBindReady(true)}, 4000)
+    }, [ready])
 
     return (
         <div style={STYLE}>
-            {loading ? <Loader /> : <Card data={payload}/>}
+            {bindReady ? <Card pageNumber={pageNumber}/> : <Loader />}
         </div>
     );
 }

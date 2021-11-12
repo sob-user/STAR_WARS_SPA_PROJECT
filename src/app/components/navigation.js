@@ -1,6 +1,7 @@
 import NavigationButton from "./navigation-button";
 import { useDispatch, useSelector } from "react-redux";
 import { togglePage } from "../../redux/actions/navigation"
+import { startResetPage, stopResetPage } from "../../redux/actions/page"
 import menuConfig from "../../utils/menuConfig";
 
 function Navigation() {
@@ -22,6 +23,10 @@ function Navigation() {
     function handleButtonNameClicked(e) {
         const buttonName = e.target.innerText;
         dispatch(togglePage(buttonName));
+        dispatch(startResetPage());
+        setTimeout(() => {
+            dispatch(stopResetPage());
+        }, 1000)
     }
     const navigationButtons = Object.keys(menuConfig);
 
